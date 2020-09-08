@@ -1,0 +1,275 @@
+<div style="background-image: linear-gradient(#ADD8E6, #F0F3F4, #ADD8E6);">
+  <div class="row" style="margin-left: 0px;margin-right: 0px;border-bottom: solid 1px #85C1E9;">
+    <div class="col-sm-2" id="logoHeader">
+      <img src="../../assets/images/logo.jpg" alt="logo">
+      <h5 style="color: slategray;">Decisions</h5>
+    </div>
+    <div class="col-sm-8"></div>
+    <div class="col-sm-2">
+      <div style="position: absolute;margin-top: 5%;">
+        <i class="fa fa-th " style="margin-left: 63px;font-size: 16pxpx;"></i>
+        <i class="fa fa-cube " style="margin-left: 23px;font-size: 16px;"></i>
+        <i class="fa fa-bell " style="font-size: 16px;margin-left: 20px;"></i>
+      </div>
+      
+      <!--  -->
+      <div class="dropdown" style="margin-left: 150px;margin-top: 5%;">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user " style="font-size: 16px;margin-left: 20px;"></i></a>
+        <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Edit Profile</a>
+            <a href="#" class="dropdown-item" (click)=logout()>Logout</a>
+        </div>
+    </div>
+    </div>
+  </div>
+  <div class="row" style="margin-left: 0px;margin-right: 0px;border-bottom: solid 1px #85C1E9;">
+    <div class="col-sm-2" >
+      <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+          <div class="sidebar-header">
+            <div id="head">
+              <h4 style="color: slategray;"><b>ANALYZE</b></h4>
+              <strong> <i class="fa fa-cog fa-bars"></i></strong>
+            </div>
+           
+          </div>
+          <ul class="list-unstyled components">
+            <li class="active">
+                <a href="#">
+                  <i class="fa fa-home"></i>Select Campaign
+                </a>
+                
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-th-large"></i>Campaign Details
+              </a>        
+             </li>
+             <li>
+              <a href="#">
+                <i class="fa fa-circle"></i>Performance Summary
+              </a>        
+             </li>
+             <li>
+              <a href="#">
+                <i class="fa fa-crosshairs"></i>Sites
+              </a>        
+             </li>
+             <li>
+              <a href="#">
+                <i class="fa fa-user"></i>Audience
+              </a>        
+             </li>
+             <li>
+              <a href="#">
+                <i class="fa fa-clock-o "></i>Time
+              </a>        
+             </li>
+             <li>
+              <a href="#">
+                <i class="fa fa-briefcase"></i>Attributes
+              </a>        
+             </li>
+             <li>
+              <a href="#">
+                <i class="fa fa-briefcase"></i>Ads
+              </a>        
+             </li>
+          </ul>
+          <div>
+            <button id="btnAll3">
+              <li >
+                <a href="#">
+                  <i class="fa fa-home" id="icon3"></i>Get Custome Report
+                </a>
+                
+            </li>   
+            </button>
+           
+          </div>
+          <div>
+            <li class="active" style="list-style: none;margin-top: 10%;">
+              <a href="#">
+                <i class="fa fa-question-circle"  id="icon3" ></i><b style="margin-left: 10%;">FAQ & Knowldge Base</b>
+              </a>
+              
+          </li>  
+          </div>
+        </nav>
+      </div>
+     
+    </div>
+    <div id="content">
+      <div id="sidebarCollapse">
+        <i class="fa fa-window-close" id="closeTogg"></i>
+      </div>
+      <div >
+        <div class="row" id="content2">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-2" style="color: slategray;">Home</div>
+          <div class="col-sm-2" style="color: slategray;">Campaign</div>
+        </div>
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-2">
+            <h3><b>CAMPAIGNS</b></h3>
+          </div>
+          <div class="col-sm-7"></div>
+          <div class="col-sm-2">
+            <button class="btn btn-primary" id="addBtn">Add Campaign</button>
+          </div>
+        </div>
+       
+        <div class="row" style="margin-top: 2%;">
+          <div class="col-sm-1"></div>
+          <div id="btnAll"><label >All</label></div>
+          <div id="btnAll2"><label >Ongoing</label></div>
+          <div id="btnAll2"><label >Completed</label></div>
+          <div id="btnAll2"><label >Historical</label></div>
+        </div>
+        <div class="example-container mat-elevation-z8">
+          <div class="row" style="margin-top: 2%;"> 
+            <div class="col-sm-1"></div>
+            <div class="col-sm-2">
+              <mat-form-field>
+                <div>
+                  <mat-label >123 campaigns</mat-label>
+                </div>
+                <div id="row3">
+                  <div class="row">
+                    <i class="fa  fa-search" style="color:gray"></i>
+                   
+                    <input matInput (keyup)="applyFilter($event)" placeholder="SEARCH" style="border-bottom: 1px solid lightgray;width: 47%;">
+                  </div>
+                  
+                </div>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-3">
+              <div>
+                <mat-label>Filter By Location</mat-label>
+              </div>
+              <div class="row3">
+                <mat-form-field appearance="fill">
+                  <select matNativeControl required style="border-bottom: 1px solid lightgray;">
+                    <option *ngFor="let version of locations" [value]="version" (click)="applyFilter(version)" >
+                    {{version}}
+                    </option>
+                  </select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div>
+                <mat-label>Filterby campaign date</mat-label>
+              </div>
+              <div class="row3">
+                <mat-form-field appearance="fill">
+                  <select matNativeControl required style="border-bottom: 1px solid lightgray;">
+                    <option *ngFor="let version of campaignDates"  >
+                    {{version}}
+                    </option>
+                  </select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div>
+                <mat-label>Sort by</mat-label>
+              </div>
+              <div class="row3">
+                <mat-form-field appearance="fill">
+                  <select matNativeControl required style="border-bottom: 1px solid lightgray;">
+                    <option *ngFor="let version of  sortOptions"  >
+                      {{version}}
+                    </option>
+                  </select>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+         <div class="row">
+           <div class="col-sm-1"></div>
+           <div class="col-sm-11">
+            <mat-table  [dataSource]="dataSource" matSort class="mat-elevation-z8"  (matSortChange)="sortData($event)">
+        
+              <ng-container matColumnDef="image">
+                <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+                <mat-cell *matCellDef="let element"><img [src]="element.imageUrl" style="height: 50px;width:50px"/> </mat-cell>
+              </ng-container>
+          
+             <!-- //  Name Column  -->
+              <ng-container matColumnDef="Name">
+                <mat-header-cell *matHeaderCellDef  mat-sort-header> Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+              </ng-container>
+          
+             <!-- //Weight Column  -->
+              <ng-container matColumnDef="Duration">
+                <mat-header-cell *matHeaderCellDef  mat-sort-header> Duration </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.duration}} </mat-cell>
+              </ng-container>
+          
+              <!-- // Symbol Column  -->
+              <ng-container matColumnDef="Status">
+                <mat-header-cell *matHeaderCellDef  mat-sort-header> Status </mat-header-cell>
+                <mat-cell *matCellDef="let element"> 
+                  <div *ngIf="element.cmstatus == 'Published'"><i class="fa fa-folder" style="color:green;padding: 10px;"></i></div>
+                  <div *ngIf="element.cmstatus == 'Processing'"><i class="fa fa-database" style="color: orange;padding:10px;"></i></div> 
+                  <div *ngIf="element.cmstatus == 'Ongoing'"><i class="fa fa-clock-o " style="color: red;padding: 10px;"></i></div>
+                 
+                  {{element.cmstatus}} </mat-cell>
+    
+              </ng-container>
+              <ng-container matColumnDef="deadline">
+                <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.deadline}}</mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="settings">
+                <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+                <mat-cell *matCellDef="let element"> <i class="fa fa-ellipsis-v" style="margin-left: 70%;"></i></mat-cell>
+              </ng-container>
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+           </div>
+          
+
+         
+          
+         
+         </div>
+         <div style="margin-left: 0px;margin-right: 0px;">
+            <mat-paginator #paginator 
+              [length]=length
+              [pageSize]="5"
+              [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+            
+            </div> 
+         
+        </div>
+      </div> 
+    
+  </div>
+    
+ </div>
+ <div class="row" style="margin-left: 0px;margin-right: 0px;">
+     <div class="col-sm-4"></div>
+     <div class="col-sm-8">
+      <div class="row" style="margin-top: 2%;">
+        <div id="btnAll2"><label >Glossary</label></div>
+        <div id="btnAll2"><label >Knowldge Base</label></div>
+        <div id="btnAll2"><label >Terms and Conditions</label></div>
+        <div id="btnAll2"><label >Privacy Ploicy</label></div>
+        <div id="btnAll2"><label >Support</label></div>
+      </div>
+      <div style="color:slategray;margin-left: 15%;">
+        © MovingWalls 2019  All rights reserved
+      </div>
+     </div>
+     <div class="col-sm-2"></div>
+  
+ 
+ </div>
+</div>
