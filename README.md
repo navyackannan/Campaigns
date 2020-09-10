@@ -1,7 +1,9 @@
 # Campaigns
 # Getting started
 
-Make sure you have the [Angular CLI](https://github.com/angular/angular-cli#installation) installed globally. The steps are,
+Make sure you have the [Angular CLI & Node js]. The steps are,
+ * Install Node.js (https://nodejs.org/en/download/)
+ * npm install -g @angular/cli
  * clone the repo
  * move to the folder where the repo is saved
  * type "npm install"
