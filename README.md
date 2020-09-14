@@ -7,9 +7,7 @@ Make sure you have the [Angular CLI & Node js]. The steps are,
  * clone the repo
  * move to the folder where the repo is saved
  * type "npm install"
- * to run the project type "ng serve"
- * To run the server open another command prompt , move the patch to cd ../server
- * after type "node index.js"
+ * to run the project type "npm start"
  
  Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
