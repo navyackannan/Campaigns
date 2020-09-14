@@ -7,7 +7,9 @@ import { HttpClient } from '@angular/common/http';
 export class LoginServicesService {
   
   constructor(private http:HttpClient) { }
-  public url = "http://localhost:4000";
+  //public url = "http://localhost:4000";
+ public url = window.location.origin +":4000";
+
   userLogin(userName,password){
     return this.http.post(this.url+"/login/",{
       "username":userName,
