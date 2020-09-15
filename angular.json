@@ -17,7 +17,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            
             "outputPath": "dist/assesement",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -77,6 +76,7 @@
           "configurations": {
             "production": {
               "browserTarget": "assesement:build:production"
+
             }
           }
         },
