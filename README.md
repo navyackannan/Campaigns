@@ -24,4 +24,5 @@ can login by using ,
      password :password123member
 
 
-
+To view the realtime view, can use this 
+https://5f601c5097653e237c9527c6--pensive-babbage-57670e.netlify.app/login
